@@ -1,0 +1,156 @@
+@import "normalize";
+@import "variables";
+@import "mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-size: 10px;
+}
+
+​body {
+  min-height: 100%;
+  @include font(1.4rem, $text-color, 500, $text-ff, 1.8);
+}
+
+.bg {
+  background-image: url(../img/background.jpg);
+  background-color: #399a7b;
+  background-size: cover;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  padding: 200px 0;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #dfe0e2;
+  height: 280px;
+  margin: 0 15px 15px 0;
+  position: relative;
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
+  &__heart,
+  &__diamond {
+    color: red;
+  }
+}
+
+.corner {
+  line-height: 1;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  &--top {
+    left: 8px;
+    top: 12px;
+  }
+  &--bottom {
+    bottom: 12px;
+    right: 8px;
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+  }
+}
+
+.corner span {
+  display: block;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.corner .number {
+  font-size: 32px;
+  height: 32px;
+  line-height: 32px;
+}
+
+.suit {
+  font-size: 64px;
+  font-weight: bold;
+  height: 60px;
+  line-height: 60px;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
+  width: 50px;
+  &__top {
+    top: 24px;
+    &--left {
+      left: 30px;
+    }
+    &--right {
+      right: 30px;
+    }
+  }
+  &__transform {
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    &--bottom {
+      bottom: 70px;
+      left: 76px;
+    }
+    &--right {
+      bottom: 24px;
+      right: 30px;
+    }
+    &--left {
+      bottom: 24px;
+      left: 30px;
+    }
+  }
+  &__middle {
+    left: 76px;
+    top: 110px;
+    &--top {
+      top: 70px;
+    }
+    &--left {
+      left: 30px;
+    }
+  }
+  &__right {
+    right: 30px;
+    top: 110px;
+  }
+}
+
+.front,
+.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 280px;
+  backface-visibility: hidden;
+  transition: 0.5s;
+  position: absolute;
+}
+
+.backfaces .back {
+  transform: rotateY(180deg);
+}
+
+#flip:checked + .backfaces .front,
+#flip2:checked + .backfaces .front,
+#flip3:checked + .backfaces .front {
+  transform: rotateY(180deg);
+}
+#flip:checked + .backfaces .back,
+#flip2:checked + .backfaces .back,
+#flip3:checked + .backfaces .back {
+  transform: rotateY(360deg);
+}
+
+input {
+  opacity: 0;
+}
