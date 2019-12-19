@@ -57,8 +57,7 @@ html {
   &--bottom {
     bottom: 12px;
     right: 8px;
-    -moz-transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
   }
 }
 
@@ -93,8 +92,7 @@ html {
     }
   }
   &__transform {
-    -moz-transform: rotate(180deg);
-    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
     &--bottom {
       bottom: 70px;
       left: 76px;
