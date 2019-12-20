@@ -32,13 +32,12 @@ html {
 }
 
 .card {
-  background-color: #dfe0e2;
   height: 280px;
   margin: 0 15px 15px 0;
   position: relative;
   width: 200px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
+  // border-radius: 10px;
+  // box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
   &__heart,
   &__diamond {
     color: red;
@@ -124,6 +123,9 @@ html {
 
 .front,
 .back {
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.4);
+  background-color: #dfe0e2;
   position: absolute;
   top: 0;
   left: 0;
